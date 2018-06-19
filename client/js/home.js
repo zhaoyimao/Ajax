@@ -36,7 +36,7 @@ handleDeleteMovieClick(e){
         if(movieId){
             let confirmDel=confirm("确认删除？");
             if(confirmDel)
-            deleteMovieId(movieId)
+            homepage.fun.deleteMovieId(movieId)
             else return
         }else return
     },
@@ -45,6 +45,7 @@ handleDeleteMovieClick(e){
             .then(function(response){
                 if(response.status===200)
                 console.log("删除成功");
+                render();
             })
             .catch(function(error){
                 console.log(error);
